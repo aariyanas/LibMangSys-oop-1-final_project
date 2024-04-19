@@ -127,7 +127,7 @@ class Book:
         """
         self.__available == True
 
-    def __str__(self):
+    def toString(self):
         """
         
         """
