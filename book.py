@@ -19,7 +19,7 @@ class Book:
 
     def __init__(self, isbn, title, author, genre, available):
         """
-        
+        initializes a new book with a specific isbn, title, author, genre, and availability
         """
         self.__isbn = isbn
         self.__title = title
@@ -29,37 +29,37 @@ class Book:
 
     def get_isbn(self):
         """
-        
+        returns book's isbn
         """
         return self.__isbn
     
     def get_title(self):
         """
-        
+        returns book's title
         """
         return self.__title
     
     def get_author(self):
         """
-        
+        returns book's author
         """
         return self.__author
     
     def get_genre(self):
         """
-        
+        returns book's genre (corresponding number)
         """
         return self._genre
     
     def is_available(self):
         """
-        
+        returns book's availability (boolean)
         """
         return self.__available
     
     def get_genre_name(self):
         """
-        
+        returns the book's genre by name according to the corresponding number
         """
         if self.__genre == 0:
             return self.ROMANCE
@@ -84,7 +84,7 @@ class Book:
         
     def get_availability(self):
         """
-        
+        returns Available if availability=True, false otherwise
         """
         if self.__available:
             return "Available"
@@ -93,45 +93,45 @@ class Book:
         
     def set_isbn(self, this_isbn):
         """
-        
+        sets book's isbn to this specified one
         """
         self.__isbn == this_isbn
 
     def set_title(self, this_title):
         """
-        
+        sets book's title to this specified one
         """
         self.__title == this_title
 
     def set_author(self, this_author):
         """
-        
+        sets book's author to this specified one
         """
         self.__author == this_author
 
     def set_genre(self, this_genre):
         """
-        
+        sets book's genre to this specified one (corresponding number)
         """
         self.__genre == this_genre
 
     def borrow_it(self):
         """
-        
+        sets book's availability to false
         """
         self.__available == False
 
     def return_it(self):
         """
-        
+        sets book's availability to true
         """
         self.__available == True
 
-    def toString(self):
+    def __str__(self):
         """
-        
+        converts book to a formatted string
         """
-        return f"{self.__isbn} {self.__title}\t\t{self.__author}\t\t{self.__genre}\t{self.get_availability()}"
+        return ("{:14s} {:25s} {:25s} {:20s} {:s}").format(self.__isbn, self.__title, self.__author, self.get_genre_name(), self.get_availability())
 
 
 
